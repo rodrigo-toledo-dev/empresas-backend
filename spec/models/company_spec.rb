@@ -62,19 +62,19 @@ RSpec.describe Company, type: :model do
   describe "company filter by name and type" do
     context "when company find by valid name and without type" do
       it "returns exaclty companies by name" do
-        expect(Company.by_name("Coca-cola")).to  have(1).items
+        expect(Company.filter_by_name_and_type("Coca-cola")).to  have(1).items
       end
     end
 
     context "when company find by valid name and with type" do
       it "returns empty results" do
-        expect(Company.startup.by_name("Coca-cola")).to  be_empty
+        expect(Company.filter_by_name_and_type("Coca-cola", "startup")).to  be_empty
       end
     end
 
     context "when company find by valid by part of name and with valid type" do
       it "returns positive results" do
-        expect(Company.large.by_name("Co")).to  have_at_least(8).items
+        expect(Company.filter_by_name_and_type("Co","large")).to  have_at_least(8).items
       end
     end
   end

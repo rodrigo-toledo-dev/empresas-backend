@@ -1,23 +1,15 @@
 class Company < ApplicationRecord
   enum company_type: [:startup, :medium_sized, :large]
-  scope :by_type, ->(filter) do
-    case filter.to_s
-    when "startup"
-      startup
-    when "medium_size"
-      medium_size
-    when "large"
-      large
-    else
-      unscoped
-    end
-  end
-
-  scope :by_name, ->(filter) do
+  scope :by_name, ->(filter){ 
     where("name LIKE ?", "%#{filter.to_s}%")
-  end
+  }
 
-  def self.filter(name, type)
-    self.by_name(name).to_sql
-  end
+  scope :filter_by_name_and_type, lambda { |name, type = nil|
+    if type.nil?
+      by_name(name)
+    else
+      by_name(name).send(type.to_sym)
+    end
+  }
+  
 end
