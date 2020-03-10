@@ -1,52 +1,52 @@
 # README
 
-Estes documento README tem como objetivo fornecer as informaÃ§Ãµes necessÃ¡rias para realizaÃ§Ã£o do projeto Empresas.
+Estes documento README tem como objetivo fornecer as informações necessárias para realização do projeto Empresas.
 
 ### O QUE FAZER ?
 
-- VocÃª deve realizar um fork deste repositÃ³rio e, ao finalizar, enviar o link do seu repositÃ³rio para a nossa equipe. Lembre-se, NÃƒO Ã© necessÃ¡rio criar um Pull Request para isso, nÃ³s iremos avaliar e retornar por email o resultado do seu teste.
+- Vocẽ deve realizar um fork deste repositório e, ao finalizar, enviar o link do seu repositório para a nossa equipe. Lembre-se, não é necessário criar um Pull Request para isso, não iremos avaliar e retornar por email o resultado do seu teste.
 
 ### ESCOPO DO PROJETO
 
 - Deve ser criada uma API em **NodeJS** ou **Ruby on Rails**.
 - A API deve fazer o seguinte:
 
-1. Login e acesso de UsuÃ¡rio jÃ¡ registrado;
-2. Para o login usamos padrÃµes **JWT** ou **OAuth 2.0**;
+1. Login e acesso de Usuário registrado;
+2. Para o login usamos padrões **JWT** ou **OAuth 2.0**;
 3. Listagem de Empresas
 4. Detalhamento de Empresas
 5. Filtro de Empresas por nome e tipo
 
-### InformaÃ§Ãµes Importantes
+### Informações Importantes
 
-- A API deve funcionar exatamente da mesma forma que a disponibilizada na collection do postman, mais abaixo os acessos a API estarÃ£o disponÃ­veis em nosso servidor.
+- A API deve funcionar exatamente da mesma forma que a disponibilizada na collection do postman, mais abaixo os acessos a API estarão disponíveis em nosso servidor.
 
-  - Para o login usamos padrÃµes OAuth 2.0. Na resposta de sucesso do login a api retornarÃ¡ 3 custom headers (access-token, client, uid);
+  - Para o login usamos padrões OAuth 2.0. Na resposta de sucesso do login a api retornará 3 custom headers (access-token, client, uid);
 
-  - Para ter acesso as demais APIS precisamos enviar esses 3 custom headers para a API autorizar a requisiÃ§Ã£o;
+  - Para ter acesso as demais APIS precisamos enviar esses 3 custom headers para a API autorizar a requisição;
 
 - Mantenha a mesma estrutura do postman em sua API, ou seja, ela deve ter os mesmo atributos, respostas, rotas e tratamentos, funcionando igual ao nosso exemplo.
 
-- Quando seu cÃ³digo for finalizado e disponibilizado para validarmos, vamos subir em nosso servidor e realizar a integraÃ§Ã£o com o app.
+- Quando seu código for finalizado e disponibilizado para validarmos, vamos subir em nosso servidor e realizar a integração com o app.
 
-- Independente de onde conseguiu chegar no teste Ã© importante disponibilizar seu fonte para analisarmos.
+- Independente de onde conseguiu chegar no teste é importante disponibilizar seu fonte para analisarmos.
 
-- Ã‰ obrigatÃ³rio utilizaÃ§Ã£o de Banco de Dados MySql/PostgreSQL
+- É obrigatório utilização de Banco de Dados MySql/PostgreSQL
 
 ### Dados para Teste
 
 - Servidor: https://empresas.ioasys.com.br/
-- VersÃ£o da API: v1
+- Versão da API: v1
 - UsuÃ¡rio de Teste: testeapple@ioasys.com.br
 - Senha de Teste : 12341234
 
 ### Dicas
 
-- DocumentaÃ§Ã£o JWT https://jwt.io/
+- Documentação JWT https://jwt.io/
 - Frameworks NodeJS:
 
   1. https://expressjs.com/pt-br/
   2. https://sailsjs.com/
 
 - Guideline rails http://guides.rubyonrails.org/index.html
-- Componente de autenticaÃ§Ã£o https://github.com/lynndylanhurley/devise_token_auth
+- Componente de autenticação https://github.com/lynndylanhurley/devise_token_auth
