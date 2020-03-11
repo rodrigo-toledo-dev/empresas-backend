@@ -1,6 +1,5 @@
 FactoryBot.define do
-  factory :company do
+  factory :enterprise do
     name { "MyString" }
-    type { 1 }
   end
 end
