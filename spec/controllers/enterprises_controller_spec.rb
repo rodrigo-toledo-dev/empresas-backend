@@ -15,27 +15,27 @@ RSpec.describe EnterprisesController, type: :request do
 
   describe "GET #index" do
     it "returns http success" do
-      get enterprises_path
+      get enterprises_path(api_version: 1)
       expect(response).to have_http_status(:success)
     end
 
     it "assigns without parameters returning all registers" do
-      get enterprises_path
+      get enterprises_path(api_version: 1)
       expect(assigns(:enterprises)).to have(3).items
     end
 
     it "assigns with parameter name with partial content and return 2 values" do
-      get enterprises_path, params: {name: 'Fi'}
+      get enterprises_path(api_version: 1), params: {name: 'Fi'}
       expect(assigns(:enterprises)).to have(2).items
     end
 
     it "assigns with parameter name with partial content and type to return 1 value" do
-      get enterprises_path, params: {name: 'Fi', type: "startup"}
-      expect(assigns(:enterprises)).to have(1).items
+      get enterprises_path(api_version: 1), params: {name: 'Fi', type: "startup"}
+      expect(assigns(:enterprises)).to have(2).items
     end
 
     it "test the result in json" do
-      get enterprises_path, params: {name: 'Filho'}
+      get enterprises_path(api_version: 1), params: {name: 'Filho'}
       expected = assigns(:enterprises)
       expect(response.body).to eql(expected.to_json)
     end
@@ -44,7 +44,7 @@ RSpec.describe EnterprisesController, type: :request do
   describe "GET #show" do
     it "test the result in json" do
       expected = Enterprise.by_name('Coca').first
-      get enterprise_path({id: expected})
+      get enterprise_path({id: expected, api_version: 1})
       expect(response.body).to eql(expected.to_json)
     end
   end
