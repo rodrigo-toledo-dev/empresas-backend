@@ -33,6 +33,24 @@ Estes documento README tem como objetivo fornecer as informações necessárias 
 
 - É obrigatório utilização de Banco de Dados MySql/PostgreSQL
 
+### Como iniciar o projeto
+
+- Ambiente testado unix
+- É necessário ter a versão do **Ruby 2.6.5 e Rails 5.2** para o projeto, dica utilizar rvm para isto
+- Duplicar o arquivo **config/database.yml.example** e renomear para **config/database.yml**
+- Configurar o arquivo citado acima de acordo com a conexão do seu banco de dados postgres
+- Executar o comando `gem install bundler` para ter o gerenciador de pacotes
+- Executar o comando `bundle install` para ter as bibliotecas instaladas
+- Executar o comando `rails db:drop db:create db:migrate db:seed db:test:prepare` para que os dados de desenvolvimento e testes estejam configurados
+- Executar o comando `rails s` para iniciar o servidor
+- Rodar testes com o script do postman localizado em **spec/support/App_Empresas.postman_collection**
+
+### Como testar o projeto localmente
+
+Este projeto tem a cobertura acima de 60% dos possíveis cenários. Os casos adversos são para obter testes não impactáveis mas posteriormente seria interessante um upgrade nos mesmos.
+
+Pra obter estes números é necessário apenas executar `rspec spec` na pasta do projeto. Porém com a biblioteca `Guard` pode-se também executar os testes com `bundle exec guard` e com qualquer alteração no projeto os testes relevantes são rodados novamente.
+
 ### Dados para Teste
 
 - Servidor: https://empresas.ioasys.com.br/
