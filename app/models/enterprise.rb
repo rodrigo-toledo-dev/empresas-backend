@@ -8,6 +8,7 @@ class Enterprise < ApplicationRecord
     if enterprise_type.nil?
       by_name(name)
     else
+      enterprise_type = self.enterprise_types.key(enterprise_type.to_i)
       by_name(name).send(enterprise_type.to_sym)
     end
   }

@@ -1,5 +1,6 @@
 require 'faker'
 User.create(email: 'testeapple@ioasys.com.br', password: '12341234')
+User.create(email: 'lucasrizel@ioasys.com.br', password: '12345678')
 10.times.each do
   enterprise = Enterprise.create(name: Faker::Company.bs)
   enterprise.startup!

@@ -29,14 +29,9 @@ RSpec.describe Enterprise, type: :model do
 
   describe "enterprise filter by name" do
     before(:all) do
-      enterprise = Enterprise.create(name: "Filo")
-      enterprise.medium_sized!
-
-      enterprise = Enterprise.create(name: "Filhotes")
-      enterprise.startup!
-
-      enterprise = Enterprise.create(name: "Coca-cola")
-      enterprise.large!
+      Enterprise.create(name: "Filo").medium_sized!
+      Enterprise.create(name: "Filhotes").startup!
+      Enterprise.create(name: "Coca-cola").large!
     end
 
     context "when enterprise find by name have parameter" do
@@ -68,13 +63,13 @@ RSpec.describe Enterprise, type: :model do
 
     context "when enterprise find by valid name and with type" do
       it "returns empty results" do
-        expect(Enterprise.filter_by_name_and_type("Coca-cola", "startup")).to  be_empty
+        expect(Enterprise.filter_by_name_and_type("Coca-cola", 0)).to  be_empty
       end
     end
 
     context "when enterprise find by valid by part of name and with valid type" do
       it "returns positive results" do
-        expect(Enterprise.filter_by_name_and_type("Enter","large")).to  have_at_least(8).items
+        expect(Enterprise.filter_by_name_and_type("Enter",2)).to  have_at_least(8).items
       end
     end
   end
