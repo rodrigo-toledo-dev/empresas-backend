@@ -37,7 +37,7 @@ Estes documento README tem como objetivo fornecer as informações necessárias 
 
 - Servidor: https://empresas.ioasys.com.br/
 - Versão da API: v1
-- UsuÃ¡rio de Teste: testeapple@ioasys.com.br
+- Usuário de Teste: testeapple@ioasys.com.br
 - Senha de Teste : 12341234
 
 ### Dicas

@@ -7,7 +7,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
-
+    render json: @company.find(params[:id])
   end
 
   protected
